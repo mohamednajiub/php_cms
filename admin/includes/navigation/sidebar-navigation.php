@@ -4,36 +4,43 @@
             <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
         </li>
         <li>
-            <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-        </li>
-        <li>
-            <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-        </li>
-        <li>
-            <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-        </li>
-        <li>
-            <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-        </li>
-        <li>
-            <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-        </li>
-        <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
+            <a href="javascript:;" data-toggle="collapse" data-target="#posts-dropdown"><i class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="posts-dropdown" class="collapse">
                 <li>
-                    <a href="#">Dropdown Item</a>
+                    <a href="#">Add Post</a>
                 </li>
                 <li>
-                    <a href="#">Dropdown Item</a>
+                    <a href="#">View Posts</a>
                 </li>
             </ul>
         </li>
-        <li class="active">
-            <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+        <li>
+            <a href="javascript:;" data-toggle="collapse" data-target="#categories-dropdown"><i class="fa fa-fw fa-arrows-v"></i> Categories <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="categories-dropdown" class="collapse">
+                <li>
+                    <a href="#">Add Category</a>
+                </li>
+                <li>
+                    <a href="#">View Categories</a>
+                </li>
+            </ul>
         </li>
         <li>
-            <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+            <a href="javascript:;" data-toggle="collapse" data-target="#users-dropdown"><i class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="users-dropdown" class="collapse">
+                <li>
+                    <a href="#">Add User</a>
+                </li>
+                <li>
+                    <a href="#">View users</a>
+                </li>
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Comments</a>
         </li>
     </ul>
 </div>
