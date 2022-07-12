@@ -33,3 +33,4 @@
 <body>
     <div id="wrapper">
         <?php include_once '../includes/db.php' ?>
+        <?php include_once 'functions.php' ?>
