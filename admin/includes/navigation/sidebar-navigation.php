@@ -15,7 +15,7 @@
             </ul>
         </li>
         <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#categories-dropdown"><i class="fa fa-fw fa-arrows-v"></i> Categories <i class="fa fa-fw fa-caret-down"></i></a>
+            <a href="categories.php" data-toggle="collapse" data-target="#categories-dropdown"><i class="fa fa-fw fa-arrows-v"></i> Categories <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="categories-dropdown" class="collapse">
                 <li>
                     <a href="#">Add Category</a>
