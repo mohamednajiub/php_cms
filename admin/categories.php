@@ -4,6 +4,8 @@
 <!-- Navigation -->
 <?php include_once './includes/navigation/navigation.php'; ?>
 
+<?php $edit_mode = false; ?>
+
 
 <div id="page-wrapper">
 
@@ -33,17 +35,80 @@
                     }
                 }
                 ?>
-                <form action="" method="POST">
 
+                <?php
+                if (isset($_POST['update'])) {
+                    echo 'here';
+
+                    $new_category = $_POST['cat_title'];
+                    $old_category_id = $_GET['edit'];
+
+                    echo $old_category_id;
+                    echo $new_category;
+                    if (!$new_category || $new_category === '' || empty($new_category)) {
+                        echo 'Please Add Valid category';
+                    } else {
+
+                        $query = "UPDATE categories SET cat_title = '{$new_category}' WHERE cat_id = '{$old_category_id}'";
+                        $result = mysqli_query($connection, $query);
+
+
+                        if (!$result) {
+                            echo mysqli_error($connection);
+                        } else {
+                            header("Location: categories.php");
+                        }
+                    }
+                }
+                ?>
+                <form action="" method="POST">
                     <div class="form-group">
-                        <label for="add-category">Add Category</label>
-                        <input name="cat_title" type="text" class="form-control" id="add-category" placeholder="Category Title">
+                        <?php
+                        if (isset($_GET['edit'])) {
+                            $edit_mode = true;
+                            $selected_cat_id = $_GET['edit'];
+                            $query = "SELECT * FROM categories WHERE cat_id = {$selected_cat_id}";
+                            $selected_category_query = mysqli_query($connection, $query);
+                            $selected_id = '';
+                            $selected_title = '';
+
+                            if ($selected_category_query) {
+
+
+                                $selected_data = mysqli_fetch_assoc($selected_category_query);
+
+                                $selected_id = $selected_data['cat_id'];
+                                $selected_title = $selected_data['cat_title'];
+                            }
+                        }
+
+                        ?>
+                        <label for="add-category">
+                            <?php
+                            if ($edit_mode) {
+                                echo 'Edit Category';
+                            } else {
+                                echo 'Add Category';
+                            }
+                            ?>
+                        </label>
+
+                        <input name="cat_title" type="text" class="form-control" id="add-category" placeholder="Category Title" value="<?php if ($edit_mode && $selected_title) echo $selected_title;
+                                                                                                                                        else echo '' ?>">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="submit" name="submit">
-                            Add Category
+                        <button class="btn btn-primary" type="submit" name="<?php if ($edit_mode) echo 'update';
+                                                                            else echo 'submit' ?>">
+                            <?php
+                            if ($edit_mode) {
+                                echo 'Edit Category';
+                            } else {
+                                echo 'Add Category';
+                            }
+                            ?>
                         </button>
                     </div>
+                    <?php echo $edit_mode; ?>
                 </form>
             </div>
 
